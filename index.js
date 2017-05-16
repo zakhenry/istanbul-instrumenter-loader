@@ -10,7 +10,7 @@ var defaultOptions = {
 };
 
 module.exports = function(source) {
-    var userOptions = loaderUtils.parseQuery(this.query);
+    var userOptions = loaderUtils.getOptions(this);
     var instrumenter = new istanbul.Instrumenter(
         assign({}, defaultOptions, userOptions)
     );
